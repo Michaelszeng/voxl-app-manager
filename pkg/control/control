@@ -1,0 +1,9 @@
+Package: voxl-app-manager
+Version: 0.0.1
+Section: base
+Priority: optional
+Architecture: arm64
+Depends: libmodal-pipe,libmodal-json,libvoxl-cutils,voxl-mavlink-server
+Conflicts: 
+Maintainer: you@template.com
+Description: Manages and runs voxl apps

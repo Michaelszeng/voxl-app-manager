@@ -1,0 +1,26 @@
+
+_voxl_app_manager(){
+
+	local OPTS=('-h -a')
+	local COLORS=('white red orange yellow green teal blue purple')
+
+	COMPREPLY=()
+
+	if [ "$COMP_CWORD" -eq 1 ]; then
+        COMPREPLY=( $(compgen -W '${OPTS}' -- ${COMP_WORDS[COMP_CWORD]}) )
+        return 0
+	fi
+
+	if [ "$COMP_CWORD" -eq 2 ]; then
+		case ${COMP_WORDS[COMP_CWORD-1]} in
+			"-a" | "--app" )
+		        if type -t _voxl_tab_complete | grep -q "function" ; then
+					_voxl_tab_complete "imu_data_t"
+				fi
+		esac
+		return 0
+	fi
+
+}
+
+complete -F _voxl_app_manager voxl-app-manager
