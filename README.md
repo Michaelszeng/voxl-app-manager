@@ -1,3 +1,10 @@
+## About the Probject:
+
+This repo contains a copy of the project I worked on during my Summer at ModalAI, a company that develops hardware and software for small, light, computationally powerful drone flight computers. My project was centered around building an OS for their drone, modeled after Android OS, on top of Linux/POSIX. This OS would safely manage multiple "apps", which are pre-programmed flight behaviors (i.e. "scan-warehouse shelf"), and provide "primitives" that are pre-programmed flight manuevers (i.e. fly-to-waypoint) that can be used to create apps (I also structured these primitives so that, in the future, we can add functionalty to automatically avoid obstacles using a "virtual force field" and prevent the drone from doing anything stupid). I built an API much like Android's app development API, and built an "app manager" that uses multi-processing and multi-threading to ensure safe manage of apps in the foreground and in the background. The purpose of this OS is to allow developers that adopt ModalAI's hardware to easily develop autonomous flight behaviors.
+
+At the conclusion of the Summer, the OS was working completely robustly; drones were able to seemlessly switch between apps, and perform series of primitives like taking off, landing, following waypoints, flying to setpoints, and interrupt these behaviors upon app changes, without failure.
+
+
 # voxl-app-manager
 
 App manager for voxl-apps. Scans for `.so` app files available in /etc/voxl-apps, runs the respective app based on input from an RC transmitter or portal or command-line argument, and runs the instructions in the app.
